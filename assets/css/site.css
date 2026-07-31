@@ -1,0 +1,138 @@
+:root {
+  color-scheme: light;
+  --ink: #17212b;
+  --muted: #5b6774;
+  --blue: #0067b1;
+  --blue-dark: #004b82;
+  --line: #dfe5eb;
+  --surface: #ffffff;
+  --background: #f5f7f9;
+  --shadow: 0 8px 28px rgba(30, 48, 70, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a { color: var(--blue); text-decoration: none; }
+a:hover, a:focus-visible { color: var(--blue-dark); text-decoration: underline; }
+
+.shell { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+
+.nav { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { color: var(--ink); font-size: 1.08rem; font-weight: 750; letter-spacing: -0.01em; }
+.brand:hover { color: var(--ink); text-decoration: none; }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a { color: var(--muted); font-weight: 600; }
+.nav-links a[aria-current="page"] { color: var(--blue); }
+
+.layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 28px; padding-block: 44px; align-items: start; }
+
+.profile-card, .card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.profile-card { position: sticky; top: 92px; padding: 26px; text-align: center; }
+.portrait { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; }
+.profile-card h1 { margin: 20px 0 4px; font-size: 1.55rem; line-height: 1.2; }
+.role { margin: 0 0 12px; color: var(--ink); font-weight: 600; line-height: 1.45; }
+.affiliation { margin: 0 0 14px; color: var(--muted); font-size: 0.9rem; line-height: 1.45; }
+.email { display: block; font-size: 0.82rem; overflow-wrap: anywhere; }
+.profile-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 17px; }
+.social-icon { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; transition: transform 150ms ease, box-shadow 150ms ease; }
+.social-icon img { display: block; width: 32px; height: 32px; object-fit: cover; border-radius: 50%; }
+.social-icon-scholar img { border-radius: 7px; }
+.social-icon:hover, .social-icon:focus-visible { text-decoration: none; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(30, 48, 70, 0.18); }
+
+.content { display: grid; gap: 24px; }
+.card { padding: 28px; }
+.card h2 { margin: 0 0 16px; font-size: 1.18rem; }
+.intro p { margin: 0 0 12px; }
+.intro p:last-child { margin-bottom: 0; }
+
+.split-card { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+.education-item { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 12px; align-items: start; margin-bottom: 18px; }
+.education-item:last-child { margin-bottom: 0; }
+.education-item .timeline-item { margin-bottom: 0; }
+.school-logo { display: grid; place-items: center; width: 52px; height: 52px; padding: 3px; overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+.school-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.school-logo-mount-sinai img { transform: scale(1.85); }
+.school-logo-wisconsin img { transform: scale(1.75); }
+.experience-item { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 12px; align-items: start; margin-bottom: 18px; }
+.experience-item:last-child { margin-bottom: 0; }
+.experience-item .timeline-item { margin-bottom: 0; }
+.organization-logo { display: grid; place-items: center; width: 76px; height: 52px; padding: 4px; overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+.organization-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.organization-logo-nyu-langone img { transform: translateX(-4%) scale(1.18); transform-origin: center; }
+.timeline-item { margin-bottom: 18px; }
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-item h3 { margin: 0; font-size: 0.98rem; line-height: 1.4; }
+.timeline-item p { margin: 2px 0; color: var(--muted); font-size: 0.92rem; line-height: 1.45; }
+.timeline-item span { color: var(--muted); font-size: 0.83rem; }
+
+.section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+.section-heading a { font-size: 0.9rem; font-weight: 600; }
+.publication { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.publication:last-child { border-bottom: 0; padding-bottom: 0; }
+.publication h3 { margin: 2px 0 7px; font-size: 1.02rem; line-height: 1.45; }
+.publication h3 a { color: var(--ink); }
+.publication p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.publication .venue { margin-top: 3px; color: var(--blue-dark); font-weight: 600; }
+.featured { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 18px; align-items: center; }
+.featured img { width: 112px; height: 76px; object-fit: contain; padding: 3px; background: #fff; border-radius: 8px; border: 1px solid var(--line); }
+.year { color: var(--blue); font-size: 0.78rem; font-weight: 750; letter-spacing: 0.08em; }
+
+.publications-page { max-width: 920px; padding-block: 50px; }
+.page-heading { margin-bottom: 40px; }
+.page-heading h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.035em; }
+.page-heading p:last-child { max-width: 680px; color: var(--muted); }
+.eyebrow { margin: 0 0 4px; color: var(--blue); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.year-heading { margin: 36px 0 12px; font-size: 1rem; color: var(--muted); }
+.publication-list { padding: 4px 26px 24px; }
+
+.footer { display: flex; justify-content: space-between; gap: 20px; padding-block: 25px 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.82rem; }
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; padding-block: 28px; }
+  .profile-card { position: static; display: grid; grid-template-columns: 110px 1fr; column-gap: 20px; text-align: left; }
+  .portrait { grid-row: 1 / 7; }
+  .profile-card h1 { margin-top: 0; }
+  .profile-links { justify-content: flex-start; }
+  .split-card { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 540px) {
+  .shell { width: min(100% - 24px, 1120px); }
+  .nav { min-height: 58px; }
+  .nav-links { gap: 14px; }
+  .layout { gap: 16px; }
+  .profile-card { display: block; text-align: center; padding: 20px; }
+  .portrait { width: 150px; margin-inline: auto; border-radius: 50%; }
+  .profile-links { justify-content: center; }
+  .card { padding: 22px; border-radius: 13px; }
+  .featured { grid-template-columns: 1fr; }
+  .featured img { width: 100%; height: 140px; }
+  .section-heading { align-items: flex-start; }
+  .footer { flex-direction: column; }
+}
