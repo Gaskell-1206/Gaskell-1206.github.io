@@ -100,16 +100,20 @@ a:hover, a:focus-visible { color: var(--blue-dark); text-decoration: underline; 
 .news-item:last-child { border-bottom: 0; padding-bottom: 0; }
 .news-item time { color: var(--muted); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.02em; }
 .news-item p { margin: 0; font-size: 1rem; line-height: 1.55; }
-.news-item a { color: var(--ink); }
-.news-item a:hover, .news-item a:focus-visible { color: var(--blue-dark); }
+.news-item a { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+.news-item a:hover, .news-item a:focus-visible { color: var(--blue-dark); text-decoration-thickness: 2px; }
 .publication { padding: 20px 0; border-bottom: 1px solid var(--line); }
 .publication:last-child { border-bottom: 0; padding-bottom: 0; }
 .publication h3 { margin: 2px 0 7px; font-size: 1.02rem; line-height: 1.45; }
 .publication h3 a { color: var(--ink); }
 .publication p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
 .publication .venue { margin-top: 3px; color: var(--blue-dark); font-weight: 600; }
-.featured { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 18px; align-items: center; }
-.featured img { width: 112px; height: 76px; object-fit: contain; padding: 3px; background: #fff; border-radius: 8px; border: 1px solid var(--line); }
+.featured { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 24px; align-items: start; }
+.featured img { width: 220px; height: 150px; object-fit: contain; padding: 6px; background: #fff; border-radius: 9px; border: 1px solid var(--line); }
+.featured h3 { margin-top: 1px; font-size: 0.96rem; line-height: 1.38; }
+.featured .authors,
+.featured .venue { font-size: 0.84rem; line-height: 1.42; }
+.featured .summary { margin-top: 9px; color: var(--ink); font-size: 0.86rem; line-height: 1.48; }
 .year { color: var(--blue); font-size: 0.78rem; font-weight: 750; letter-spacing: 0.08em; }
 
 .publications-page { max-width: 920px; padding-block: 50px; }
@@ -155,7 +159,7 @@ a:hover, a:focus-visible { color: var(--blue-dark); text-decoration: underline; 
   .profile-links { justify-content: center; }
   .card { padding: 22px; border-radius: 13px; }
   .featured { grid-template-columns: 1fr; }
-  .featured img { width: 100%; height: 140px; }
+  .featured img { width: 100%; height: 220px; }
   .section-heading { align-items: flex-start; }
   .news-item { grid-template-columns: 1fr; gap: 3px; }
   .news-feed { padding-inline: 22px; }
